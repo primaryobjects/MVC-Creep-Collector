@@ -7,4 +7,4 @@ Example of configuring MVC .NET data annotations from an XML file at run-time, f
 
 Why?
 
-C# ASP .NET MVC data annotations allow developers to specify validation for each member within a class or type object. While data annotation validation allows for powerful maintainability of type libraries, occassionally the need arises to create data annotations outside of the C# code. This can allow for validation setup by other users, content management systems, or other processes outside of the web application code. Form field validation can be modified by simply updating the XML file.
+C# ASP .NET MVC data annotations allow developers to specify validation for each member within a class or type object by using C# attributes. While data annotation validation allows for powerful maintainability of type libraries, occasionally the need arises to create data annotations outside of the C# code. This can allow for validation setup by other users, content management systems, or other processes outside of the web application code. This example demonstrates form field validation that can be configured and modified by simply updating an XML file.
