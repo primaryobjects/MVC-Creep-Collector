@@ -1,0 +1,162 @@
+﻿@using CreepCollector.Managers
+@using CreepCollector.Models
+
+@model Creep
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "addForm" }))
+{
+    <div id="leftContainer">
+        <h1>Creep Collector</h1>
+        <h2>Creep Details</h2>
+
+        <div id="baseInformation">
+            @if (ValidationManager.Validators["Creep"]["Name"].Visible)
+            {
+            <div>
+                <div class="formLabel">
+                    @Html.LabelFor(e => e.Name, "Name")
+                </div>
+                <div class="formInputField">
+                    @Html.TextBoxFor(e => e.Name)
+                    <span class="formRequiredField">
+                        @if (ValidationManager.Validators["Creep"]["Name"].Required) { <text>*</text> } else { <text>&nbsp;</text> }
+                    </span>
+                    @Html.ValidationMessageFor(e => e.Name)
+                </div>
+            </div>
+            <div class="formInputLine"></div>
+            }
+            @if (ValidationManager.Validators["Creep"]["Class"].Visible)
+            {
+            <div>
+                <div class="formLabel">
+                    @Html.LabelFor(e => e.Class, "Class")
+                </div>
+                <div class="formInputField">
+                    @Html.TextBoxFor(e => e.Class)
+                    <span class="formRequiredField">
+                        @if (ValidationManager.Validators["Creep"]["Class"].Required) { <text>*</text> } else { <text>&nbsp;</text> }
+                    </span>
+                    @Html.ValidationMessageFor(e => e.Class)
+                </div>
+            </div>
+            <div class="formInputLine"></div>
+            }
+            @if (ValidationManager.Validators["Creep"]["Level"].Visible)
+            {
+            <div>
+                <div class="formLabel">
+                    @Html.LabelFor(e => e.Level, "Level")
+                </div>
+                <div class="formInputField">
+                    @Html.TextBoxFor(e => e.Level)
+                    <span class="formRequiredField">
+                        @if (ValidationManager.Validators["Creep"]["Level"].Required) { <text>*</text> } else { <text>&nbsp;</text> }
+                    </span>
+                    @Html.ValidationMessageFor(e => e.Level)
+                </div>
+            </div>
+            <div class="formInputLine"></div>
+            }
+        </div>
+
+        <h2>Attack</h2>
+
+        <div id="attackInformation">
+            @if (ValidationManager.Validators["Attack"]["Name"].Visible)
+            {
+            <div>
+                <div class="formLabel">
+                    @Html.LabelFor(e => e.Weapon.Name, "Weapon Name")
+                </div>
+                <div class="formInputField">
+                    @Html.TextBoxFor(e => e.Weapon.Name)
+                    <span class="formRequiredField">
+                        @if (ValidationManager.Validators["Attack"]["Name"].Required) { <text>*</text> } else { <text>&nbsp;</text> }
+                    </span>
+                    @Html.ValidationMessageFor(e => e.Weapon.Name)
+                </div>
+            </div>
+            <div class="formInputLine"></div>
+            }
+            @if (ValidationManager.Validators["Attack"]["Description"].Visible)
+            {
+            <div>
+                <div class="formLabel">
+                    @Html.LabelFor(e => e.Weapon.Description, "Attack Description")
+                </div>
+                <div class="formInputField">
+                    @Html.TextBoxFor(e => e.Weapon.Description)
+                    <span class="formRequiredField">
+                        @if (ValidationManager.Validators["Attack"]["Description"].Required) { <text>*</text> } else { <text>&nbsp;</text> }
+                    </span>
+                    @Html.ValidationMessageFor(e => e.Weapon.Description)
+                </div>
+            </div>
+            <div class="formInputLine"></div>
+            }
+        </div>
+
+        <h2>Creator Details</h2>
+
+        <div id="creatorInformation">
+            @if (ValidationManager.Validators["Creep"]["CreatorName"].Visible)
+            {
+            <div>
+                <div class="formLabel">
+                    @Html.LabelFor(e => e.CreatorName, "Created By")
+                </div>
+                <div class="formInputField">
+                    @Html.TextBoxFor(e => e.CreatorName)
+                    <span class="formRequiredField">
+                        @if (ValidationManager.Validators["Creep"]["CreatorName"].Required) { <text>*</text> } else { <text>&nbsp;</text> }
+                    </span>
+                    @Html.ValidationMessageFor(e => e.CreatorName)
+                </div>
+            </div>
+            <div class="formInputLine"></div>
+            }
+            @if (ValidationManager.Validators["Creep"]["CreatorEmail"].Visible)
+            {
+            <div>
+                <div class="formLabel">
+                    @Html.LabelFor(e => e.CreatorEmail, "Email")
+                </div>
+                <div class="formInputField">
+                    @Html.TextBoxFor(e => e.CreatorEmail)
+                    <span class="formRequiredField">
+                        @if (ValidationManager.Validators["Creep"]["CreatorEmail"].Required) { <text>*</text> } else { <text>&nbsp;</text> }
+                    </span>
+                    @Html.ValidationMessageFor(e => e.CreatorEmail)
+                </div>
+            </div>
+            <div class="formInputLine"></div>
+            }
+            @if (ValidationManager.Validators["Creep"]["ConfirmCreatorEmail"].Visible)
+            {
+            <div>
+                <div class="formLabel">
+                    @Html.LabelFor(e => e.ConfirmCreatorEmail, "Confirm Email")
+                </div>
+                <div class="formInputField">
+                    @Html.TextBoxFor(e => e.ConfirmCreatorEmail)
+                    <span class="formRequiredField">
+                        @if (ValidationManager.Validators["Creep"]["ConfirmCreatorEmail"].Required) { <text>*</text> } else { <text>&nbsp;</text> }
+                    </span>
+                    @Html.ValidationMessageFor(e => e.ConfirmCreatorEmail)
+                </div>
+            </div>
+            <div class="formInputLine"></div>
+            }
+        </div>
+
+        <div style="padding: 20px 0 0 0;">
+            <div class="formLabel">&nbsp;</div>
+            <div class="formInputField">
+                <input type="submit" title="Add Creep" value="Add Creep" id="btnAdd" />
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+
+    </div>
+}

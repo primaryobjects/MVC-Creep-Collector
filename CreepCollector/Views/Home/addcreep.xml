@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Validators>
+  <Validator Type="Creep">
+    <Property Name="Name" Required="1" Visible="1" ErrorMessage="Please enter the monster's name." />
+    <Property Name="Class" Required="0" Visible="1" ErrorMessage="Please enter the monster's class." />
+    <Property Name="Level" Required="0" Visible="1" ErrorMessage="Please enter the monster's level."/>
+    <Property Name="CreatorName" Required="1" Visible="1" ErrorMessage="Please enter your name." />
+    <Property Name="CreatorEmail" Required="1" Visible="1" RegularExpression="^\S+@\S+\.\S+$" ErrorMessage="Please enter your email address."/>
+    <Property Name="ConfirmCreatorEmail" Required="1" Visible="1" RegularExpression="^\S+@\S+\.\S+$" Compare="CreatorEmail" ErrorMessage="Please confirm your email address."/>
+  </Validator>
+  <Validator Type="Attack">
+    <Property Name="Name" Required="0" Visible="1" ErrorMessage="Please enter a weapon name." />
+    <Property Name="Description" Required="0" Visible="1" ErrorMessage="Please enter a weapon description." />
+  </Validator>
+</Validators>
