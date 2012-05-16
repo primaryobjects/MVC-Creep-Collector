@@ -1,6 +1,8 @@
 MVC-Creep-Collector
 ===================
 
+Read the full tutorial at http://www.primaryobjects.com/CMS/Article141.aspx
+
 What is it?
 
 Example of configuring MVC .NET data annotations from an XML file at run-time, for a C# ASP .NET MVC4 web application, razor, jQuery, client validation. This example simulates a data entry form, allowing the user to fill out the fields and submit data. Form field validation is performed via MVC data annotation attributes, loaded from an XML file.
